@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2>Student Feedback Form</h2>
+
+    <form id="feedbackForm">
+
+        <div class="row">
+            <div>
+                <label>Student Name:</label>
+                <input type="text" placeholder="Enter name" required>
+            </div>
+
+            <div>
+                <label>Register Number:</label>
+                <input type="text" placeholder="Enter register number" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <label>Subject:</label>
+                <select>
+                    <option>Full Stack Development</option>
+                    <option>Java</option>
+                    <option>Python</option>
+                    <option>Database Management</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Rating:</label>
+                <select>
+                    <option>Excellent</option>
+                    <option>Good</option>
+                    <option>Average</option>
+                    <option>Poor</option>
+                </select>
+            </div>
+        </div>
+
+        <label>Comments:</label>
+        <textarea placeholder="Enter your comments"></textarea>
+
+        <p id="success">Feedback Submitted Successfully!</p>
+
+        <div class="buttons">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+
+    </form>
+
+    <script>
+        let form = document.getElementById("feedbackForm");
+        let message = document.getElementById("success");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            message.style.display = "block";
+        });
+
+        form.addEventListener("reset", function () {
+            message.style.display = "none";
+        });
+    </script>
+
+</body>
+
+</html>
